@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: task-manager-api
+    runtime: node
+    rootDir: server
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: CLIENT_URL
+        sync: false
+      - key: EMAIL_USER
+        sync: false
+      - key: GMAIL_OAUTH_CLIENT_ID
+        sync: false
+      - key: GMAIL_OAUTH_CLIENT_SECRET
+        sync: false
+      - key: GMAIL_OAUTH_REDIRECT_URI
+        sync: false
+      - key: GMAIL_OAUTH_REFRESH_TOKEN
+        sync: false
+      - key: GMAIL_OAUTH_SETUP_SECRET
+        sync: false
