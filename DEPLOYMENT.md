@@ -9,7 +9,7 @@ This repository is a monorepo: deploy `server` to Render and `client` to Vercel.
 
 ## Render API
 
-1. In Render, create a **Blueprint** from the repository. Render reads `render.yaml` and creates the `task-manager-api` web service.
+1. In Render, create a **Web Service** from the repository, set its Root Directory to `server`, Build Command to `npm install && npm run build`, Start Command to `npm start`, and Health Check Path to `/health`.
 2. Set these environment variables in the Render dashboard. Never enter surrounding quotes.
 
    ```text
